@@ -1,3 +1,4 @@
+/* メニュー全体のデザイン */
 nav {
   background-color: #333;
   color: #fff;
@@ -95,7 +96,7 @@ nav li.parent ul li a {
   border-bottom: solid 1px rgba(255, 255, 255, 0.6);
 }
 
-nav li.parent ul li:last-child a {
+nav li.parent ul li:last-child > a {
   border-bottom: none;
 }
 
