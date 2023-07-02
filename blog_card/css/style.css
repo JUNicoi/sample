@@ -1,34 +1,34 @@
 #blog_card .cont {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  color: #333;
+  display: flex; /* カードを横並びにする */
+  justify-content: center; /* 横方向を真ん中にする */
+  align-items: center; /* 縦方向も真ん中にする */
+  flex-wrap: wrap; /* 画面サイズが小さくなったときにコンテンツを折り返す */
+  color: #333; /* 文字色 */
 }
 #blog_card a {
-  margin: 1rem;
-  border: solid 1px #333;
-  transition: 0.5s;
+  margin: 1rem; /* カード間の余白 */
+  border: solid 1px #333; /* カードの枠線 */
+  transition: 0.5s; /* カードがポップアップする速さ */
 }
 #blog_card a:hover {
-  scale: 1.05;
+  scale: 1.05; /* カードの拡大率 */
 }
 #blog_card .pict,
 #blog_card h2,
 #blog_card .text,
 #blog_card .date {
-  margin-bottom: 8px;
+  margin-bottom: 8px; /* コンテンツ間の余白 */
 }
 #blog_card h2,
 #blog_card .text,
 #blog_card .date {
-  margin-left: 8px;
-  margin-right: 8px;
+  margin-left: 8px; /* 左右の余白 */
+  margin-right: 8px; /* 左右の余白 */
 }
 #blog_card h2 {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.2rem; /* タイトルの文字サイズ */
+  font-weight: bold; /* タイトルの文字太さ */
 }
 #blog_card .date {
-  text-align: right;
+  text-align: right; /* 日付を右揃えにする */
 }
