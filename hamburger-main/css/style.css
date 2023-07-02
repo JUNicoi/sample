@@ -1,0 +1,92 @@
+/* ハンバーガーメニュー設定 */
+/* 四角の部分 */
+.openbtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: gainsboro;
+}
+
+/* ３本線 */
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  width: 45%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+/* ×に変化 */
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+/* メニューのレイアウト */
+nav ul {
+  text-align: center;
+  width: 100%;
+}
+nav ul li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 18px;
+}
+#gnav ul {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* クラスが付与される前のレイアウト */
+#gnav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  height: 100vh;
+  background-color: #999;
+  transition: all 0.6s;
+}
+/* クラスが付与された後のレイアウト */
+#gnav.list_active #gnav_list {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#gnav.list_active {
+  right: 0;
+}

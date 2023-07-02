@@ -1,0 +1,49 @@
+/* メニュー全体のデザイン */
+nav {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* メニューを横並びにする */
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+/* メニューリンクの設定 */
+nav ul li a {
+  display: block;
+  color: #999;
+  padding: 20px 35px;
+}
+
+nav ul li a:hover {
+  transition: all 0.3s; /* アニメーションの動きの速度 */
+  background-color: #ccc;
+  color: #fff;
+}
+
+/* 表示ページのメニューデザイン */
+a.active {
+  background-color: #28bfe7;
+  color: #fff;
+}
+
+/* 画面サイズが768px以下になった時の設定 */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0;
+  }
+  nav ul {
+    display: block;
+  }
+
+  nav ul li a {
+    border-bottom: solid 1px #ccc;
+  }
+
+  nav ul li li a {
+    padding: 20px 35px;
+  }
+}

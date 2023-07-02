@@ -1,0 +1,41 @@
+/* サンプルページレイアウト */
+section {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* リンクボタンベース */
+.link_btn {
+  display: block;
+  font-size: 18px;
+  max-width: 350px;
+  min-width: 300px;
+  text-align: center;
+  line-height: 3em;
+}
+
+/* リンクボタンのアレンジ */
+._ds01 {
+  color: #fff;
+  background-color: #333;
+  border-radius: 2em;
+  transition: 0.3s;
+  position: relative;
+}
+._ds01::after {
+  /*疑似要素のbeforeを使って表示する*/
+  font-family: "Font Awesome 6 Free"; /*アイコンフォントを使う*/
+  font-weight: 900; /*無料版（solid）は900に設定する*/
+  content: "\f054"; /*使用したいアイコンフォントのコードを入れる*/
+  position: absolute;
+  right: 1em;
+}
+._ds01:hover {
+  opacity: 0.8;
+}
+
+/* 電話をかけるボタンの作り方 */
+@media (max-width: 959px) {
+}

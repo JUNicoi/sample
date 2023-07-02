@@ -1,0 +1,34 @@
+#blog_card .cont {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  color: #333;
+}
+#blog_card a {
+  margin: 1rem;
+  border: solid 1px #333;
+  transition: 0.5s;
+}
+#blog_card a:hover {
+  scale: 1.05;
+}
+#blog_card .pict,
+#blog_card h2,
+#blog_card .text,
+#blog_card .date {
+  margin-bottom: 8px;
+}
+#blog_card h2,
+#blog_card .text,
+#blog_card .date {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#blog_card h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+#blog_card .date {
+  text-align: right;
+}

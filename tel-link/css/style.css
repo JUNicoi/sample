@@ -1,0 +1,138 @@
+/* ハンバーガーメニュー設定 */
+/* 四角の部分 */
+.openbtn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  background-color: gainsboro;
+}
+
+/* ３本線 */
+.openbtn span {
+  display: inline-block;
+  transition: all 0.4s;
+  position: absolute;
+  left: 14px;
+  width: 45%;
+  height: 3px;
+  border-radius: 2px;
+  background-color: #666;
+}
+.openbtn span:nth-of-type(1) {
+  top: 15px;
+}
+.openbtn span:nth-of-type(2) {
+  top: 23px;
+}
+.openbtn span:nth-of-type(3) {
+  top: 31px;
+}
+/* ×に変化 */
+.openbtn.active span:nth-of-type(1) {
+  top: 18px;
+  left: 18px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 30%;
+}
+.openbtn.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.openbtn.active span:nth-of-type(3) {
+  top: 30px;
+  left: 18px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 30%;
+}
+/* メニューのレイアウト */
+nav ul {
+  text-align: center;
+  width: 100%;
+}
+nav ul li a {
+  color: #333;
+  padding: 10px;
+  display: block;
+  letter-spacing: 0.1em;
+  font-weight: bold;
+  font-size: 18px;
+}
+#gnav ul {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* クラスが付与される前のレイアウト */
+#gnav {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  right: -120%;
+  width: 100%;
+  height: 100vh;
+  background-color: #999;
+  transition: all 0.6s;
+}
+/* クラスが付与された後のレイアウト */
+#gnav.list_active #gnav_list {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+#gnav.list_active {
+  right: 0;
+}
+#tel_mail {
+  display: none;
+}
+
+/* 電話をかけるボタンの作り方 */
+@media (max-width: 959px) {
+  #tel_mail {
+    width: 100%; /*ボタンの表示エリアを画面いっぱいにする*/
+    position: fixed; /*画面の決まった場所に固定する*/
+    bottom: 0px; /*画面の一番下に設置する*/
+    display: flex; /*電話とメールのボタンを横並びにする*/
+  }
+  #tel_mail .tel,
+  #tel_mail .mail {
+    display: flex; /*アイコンフォントと文字を横並びにする*/
+    flex-direction: column; /*アイコンフォントと文字を縦並びに変える*/
+    width: 50%; /*電話とメールボタンの横幅を画面の半分ずつにする*/
+    line-height: 40px; /*ボタンの高さを調整する*/
+    padding: 1rem; /*ポタンの上下の余白を調整する*/
+    text-align: center; /*アイコンフォントと文字をセンタリングする*/
+    color: #fff; /*文字の色*/
+    font-weight: bold; /*文字の太さ*/
+    font-size: 1.5rem; /*文字の大きさ*/
+  }
+  #tel_mail .tel {
+    /*電話ボタンの背景色*/
+    background-image: linear-gradient(120deg, rgba(144, 245, 154, 1), rgba(4, 202, 255, 1));
+  }
+  #tel_mail .mail {
+    /*メールボタンの背景色*/
+    background-image: linear-gradient(120deg, rgba(247, 93, 139, 1), rgba(254, 220, 64, 1));
+  }
+  #tel_mail .tel::before {
+    /*疑似要素のbeforeを使って表示する*/
+    font-family: "Font Awesome 6 Free"; /*アイコンフォントを使う*/
+    font-weight: 900; /*無料版（solid）は900に設定する*/
+    content: "\f095"; /*使用したいアイコンフォントのコードを入れる*/
+    font-size: 2rem; /*アイコンフォントのサイズを調整する*/
+  }
+  #tel_mail .mail::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f0e0";
+    font-size: 2rem;
+  }
+}

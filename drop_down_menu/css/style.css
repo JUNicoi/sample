@@ -1,0 +1,165 @@
+/* メニュー全体のデザイン */
+nav {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+/* メニューを横並びにする */
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+/* ２階層目 以降のメニューは縦並びにする */
+nav ul ul {
+  display: block;
+}
+
+/* liを下層メニューのulや矢印の基点にする */
+nav ul li {
+  position: relative;
+}
+
+/* メニューリンクの設定 */
+nav ul li a {
+  display: block;
+  color: #999;
+  padding: 20px 35px;
+  transition: all 0.3s; /* アニメーションの動きの速度 */
+}
+
+nav ul li li a {
+  padding: 10px 35px;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+/* ２階層目を持つliに矢印を設定する */
+nav ul li.parent::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 28px;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #999;
+  border-right: 2px solid #999;
+  transform: rotate(135deg);
+}
+
+/* ３階層目を持つliに矢印を設定する */
+
+nav ul ul li.parent::before {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid #fff;
+  border-right: 2px solid #fff;
+  transform: rotate(45deg);
+}
+
+/* ２・３階層目 共通設定 */
+nav li.parent ul {
+  /* 位置指定 */
+  position: absolute;
+  left: 0;
+  top: 64px;
+  z-index: 4;
+  /* デザイン指定 */
+  background-color: #28bfe7;
+  width: 180px;
+  /* 最初は非表示にする */
+  visibility: hidden;
+  opacity: 0;
+  /* アニメーション */
+  transition: all 0.3s;
+}
+
+/* hoverしたら表示する */
+nav li.parent:hover > ul,
+nav li.parent ul li:hover > ul,
+nav li.parent:active > ul,
+nav li.parent ul li:active > ul {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 下層メニューのaタグのデザイン */
+nav li.parent ul li a {
+  color: #fff;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.6);
+}
+
+nav li.parent ul li:last-child > a {
+  border-bottom: none;
+}
+
+nav li.parent ul li a:hover,
+nav li.parent ul li a:active {
+  background-color: #3577ca;
+}
+
+/* ３階層目の位置 */
+nav li.parent ul ul {
+  top: 0;
+  left: 182px;
+  background-color: #66adf5;
+}
+
+nav li.parent ul ul li a:hover,
+nav li.parent ul ul li a:active {
+  background-color: #448ed3;
+}
+
+/* 画面サイズが768px以下になった時の設定 */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 0;
+  }
+  nav ul {
+    display: block;
+  }
+
+  nav li.parent ul,
+  nav li.parent ul ul {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* JavaScriptで制御するので一旦表示 */
+    visibility: visible;
+    opacity: 1;
+    /* slidetoggleを使って表示させるために表示にする */
+    display: none;
+    transition: none;
+  }
+
+  nav ul li a {
+    border-bottom: solid 1px #ccc;
+  }
+
+  nav ul li li a {
+    padding: 20px 35px;
+  }
+
+  /* 矢印の位置と向き調整 */
+  nav ul li.parent::before {
+    right: 20px;
+  }
+
+  nav ul ul li.parent::before {
+    transform: rotate(135deg);
+    top: 28px;
+    right: 20px;
+  }
+
+  nav ul li.parent.active::before {
+    transform: rotate(-45deg);
+  }
+}
