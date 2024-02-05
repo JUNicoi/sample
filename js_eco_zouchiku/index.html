@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>増改築で必要なBEI</title>
+  </head>
+  <body>
+    <form id="form">
+      <p>既存面積</p>
+      <input id="kizon" type="text" name="kizon" />
+      <p>増築面積</p>
+      <input id="zouchiku" type="text" name="zouchiku" />
+      <p>基準値</p>
+      <input type="radio" name="bild" id="bild" value="1.1" />平成28 年3月31日以前の建物<br />
+      <input type="radio" name="bild" id="bild" value="1.0" />平成28 年4月1日以降の建物<br />
+      <input id="submit" type="submit" value="submit" />
+    </form>
+    <div id="result">
+      <p>係数1.2</p>
+      <p>既存面積</p>
+      <p id="kizonMenseki"></p>
+      <p>増築面積</p>
+      <p id="zouchikuMenseki"></p>
+      <p>増築後の延床面積</p>
+      <p id="nobeMenseki"></p>
+      <p>省エネ基準</p>
+      <p id="ecoLevel"></p>
+      <p>省エネ基準をクリアするために必要な増築部分のBEI</p>
+      <p id="bei"></p>
+    </div>
+    <script src="./js/function.js"></script>
+  </body>
+</html>
