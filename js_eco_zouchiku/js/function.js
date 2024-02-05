@@ -15,22 +15,19 @@ form.addEventListener("submit", function (event) {
   event.preventDefault(); //ブラウザのリロードかからなくなる（デフォルトのイベントが動かない）
   const kizonMenseki = Number(kizon.value);
   const zouchikuMenseki = Number(zouchiku.value);
-  const bildYear = Number(bild.value);
+  const ecoLevelResult = Number(bild.value);
 
   const nobeMenseki = kizonMenseki + zouchikuMenseki;
-  const bei1 = nobeMenseki * bildYear;
+  const bei1 = nobeMenseki * ecoLevelResult;
   const bei2 = kizonMenseki * 1.2;
   const bei3 = bei1 - bei2;
   const bei4 = (bei3 / zouchikuMenseki) * 100;
-  // const bei4 = (((nobeMenseki * bildYear - kizonMenseki * 1.2) / zouchikuMenseki) * 100) / 100;
-  const bei = bei3 / 100;
+  // const bei4 = (((nobeMenseki * ecoLevel - kizonMenseki * 1.2) / zouchikuMenseki) * 100) / 100;
+  const bei = bei4 / 100;
   kizonMensekiResult.innerHTML = `${kizonMenseki}㎡`;
   zouchikuMensekiResult.innerHTML = `${zouchikuMenseki}㎡`;
   nobeMensekiResult.innerHTML = `${nobeMenseki}㎡`;
-  ecoLevel.innerHTML = `BEI ${bildYear}`;
+  ecoLevel.innerHTML = `BEI ${ecoLevelResult}`;
   beiResult.innerHTML = `BEI ${bei}`;
-  console.log(bei1);
-  console.log(bei2);
-  console.log(bei3);
-  console.log(bei4);
+  console.log(ecoLevelResult);
 });
