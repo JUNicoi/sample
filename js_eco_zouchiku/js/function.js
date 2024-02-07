@@ -22,8 +22,7 @@ form.addEventListener("submit", function (event) {
   const bei2 = kizonMenseki * 1.2;
   const bei3 = bei1 - bei2;
   const bei4 = (bei3 / zouchikuMenseki) * 100;
-  // const bei4 = (((nobeMenseki * ecoLevel - kizonMenseki * 1.2) / zouchikuMenseki) * 100) / 100;
-  const bei = bei4 / 100;
+  const bei = Math.floor(bei4) / 100;
   kizonMensekiResult.innerHTML = `${kizonMenseki}㎡`;
   zouchikuMensekiResult.innerHTML = `${zouchikuMenseki}㎡`;
   nobeMensekiResult.innerHTML = `${nobeMenseki}㎡`;
