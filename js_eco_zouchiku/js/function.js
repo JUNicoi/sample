@@ -33,5 +33,5 @@ form.addEventListener("submit", function (event) {
   zouchikuMensekiResult.innerHTML = `${zouchikuMenseki}㎡`;
   nobeMensekiResult.innerHTML = `${nobeMenseki}㎡`;
   ecoLevel.innerHTML = `BEI ${ecoLevelResult}`;
-  beiResult.innerHTML = `BEI ${bei}以下`;
+  beiResult.innerHTML = `BEI<strong> ${bei}</strong>以下`;
 });
