@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .f_wrap {
+        padding: 1rem;
+        border: 5px solid #efefef;
+        border-radius: 10px;
+      }
+      .tr {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+      }
+      .tr:nth-last-child(1) {
+        display: block;
+      }
+      #form {
+        margin-bottom: 3rem;
+      }
+      #result {
+        display: none;
+        margin-bottom: 3rem;
+      }
+      #result.on {
+        display: block;
+      }
+      #result p,
+      #form p,
+      #form input {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      #submit {
+        font-size: 18px;
+        font-weight: bold;
+      }
+      #form input,
+      #form label,
+      #keisu,
+      #kizonMenseki,
+      #zouchikuMenseki,
+      #nobeMenseki,
+      #ecoLevel,
+      #bei {
+        font-size: 35px;
+      }
+      #form p:nth-of-type(1) label {
+        margin-bottom: 0;
+      }
+      #bei strong {
+        font-size: 30px;
+        color: #00cccc;
+      }
+      input:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      input:focus::-moz-placeholder {
+        color: transparent;
+      }
+      input:focus::-ms-input-placeholder {
+        color: transparent;
+      }
+      input:focus::placeholder {
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="f_wrap">
+      <form id="form">
+        <p>IDを入力してください</p>
+        <input id="id" type="text" name="id" placeholder="ID" />
+        <p>PASSを入力してください</p>
+        <input id="pass" type="text" name="pass" placeholder="パスワード" />
+        <input id="submit" type="submit" value="変換する" />
+      </form>
+      <div id="result">
+        <h3>変換結果</h3>
+        下記変換結果をそのまま「.htpasswd」に記述してください。
+        <p id="rHash"></p>
+      </div>
+    </div>
+    <script src="./js/function.js"></script>
+  </body>
+</html>
