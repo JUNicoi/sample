@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "LOGIN PAGE"
+AuthUserFile /sample.nicoiworks.com/basic/.htpasswd
+Require valid-user
