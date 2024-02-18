@@ -4,17 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <form id="form">
-      <p>底辺の長さ</p>
-      <input type="text" id="teihen" />
-      <p>高さ</p>
-      <input type="text" id="takasa" />
-      <button type="submit">計算する</button>
-    </form>
-    <div id="menseki"></div>
+    <div class="f_wrap">
+      <form id="form">
+        <p>底辺の長さ</p>
+        <input type="text" id="teihen" />
+        <p>高さ</p>
+        <input type="text" id="takasa" />
+        <input id="submit" type="submit" value="計算する" />
+      </form>
+      <div id="menseki"></div>
+    </div>
     <script src="./js/function.js"></script>
   </body>
 </html>

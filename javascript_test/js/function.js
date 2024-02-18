@@ -12,5 +12,5 @@ form.addEventListener("submit", function (event) {
   const takasa = Number(form.takasa.value);
 
   const menseki = (teihen * takasa) / waru;
-  mensekiResult.innerHTML = `<strong> ${menseki}m2</strong>`;
+  mensekiResult.innerHTML = `三角形の面積は<strong> ${menseki}m2</strong>です`;
 });
