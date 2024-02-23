@@ -1,0 +1,53 @@
+.f_wrap {
+  padding: 1rem;
+  border: 5px solid #efefef;
+  border-radius: 10px;
+}
+
+#form {
+  margin-bottom: 3rem;
+}
+#hensachi {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+#hensachi strong {
+  font-size: 30px;
+  color: #00cccc;
+}
+#hensachi p,
+#form p,
+#form input {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.on {
+  display: block !important;
+}
+#submit {
+  font-size: 18px;
+  font-weight: bold;
+}
+#form input,
+#form label,
+#hensa,
+#ave,
+#point,
+#hensachi {
+  font-size: 25px;
+}
+#form p:nth-of-type(1) label {
+  margin-bottom: 0;
+}
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+input:focus::-ms-input-placeholder {
+  color: transparent;
+}
+input:focus::placeholder {
+  color: transparent;
+}
