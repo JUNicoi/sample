@@ -34,15 +34,20 @@ form.addEventListener("submit", function (event) {
   ju_result.innerHTML = `${ju_nobeMenseki}㎡`;
   nobe_result.innerHTML = `${nobeMenseki}㎡`;
   // 省エネ法判定式
-  if (hi_nobeMenseki >= 300 && judge === "1") {
+  if (hi_zouchikuMenseki >= 300 && judge === "1") {
     judgeResult.innerHTML = "省エネ<strong>適判</strong>が必要です。";
-  } else if (hi_nobeMenseki >= 300 && judge === "0" && hi_rateMenseki >= 0.5) {
+  } else if (hi_zouchikuMenseki >= 300 && judge === "0" && hi_rateMenseki >= 0.5) {
     judgeResult.innerHTML = "省エネ<strong>適判</strong>が必要です。";
-  } else if (hi_nobeMenseki >= 300 && judge === "0" && hi_rateMenseki < 0.5) {
+  } else if (
+    hi_zouchikuMenseki >= 300 &&
+    hi_nobeMenseki >= 300 &&
+    judge === "0" &&
+    hi_rateMenseki < 0.5
+  ) {
     judgeResult.innerHTML = "省エネ<strong>届出</strong>が必要です。";
-  } else if (hi_nobeMenseki < 300 && nobeMenseki >= 300) {
+  } else if (hi_zouchikuMenseki < 300 && nobeMenseki >= 300) {
     judgeResult.innerHTML = "省エネ<strong>届出</strong>が必要です。";
-  } else if (nobeMenseki < 300 && nobeMenseki >= 10) {
+  } else if (hi_zouchikuMenseki < 300 && nobeMenseki < 300 && nobeMenseki >= 10) {
     judgeResult.innerHTML = "省エネ<strong>説明義務</strong>が必要です。";
   } else if (nobeMenseki < 10) {
     judgeResult.innerHTML = "省エネ法の手続きは<strong>不要</strong>です。";
