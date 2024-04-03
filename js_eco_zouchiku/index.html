@@ -82,14 +82,31 @@
         <input id="kizon" type="text" name="kizon" placeholder="半角数字で入力" />
         <p>増築面積</p>
         <input id="zouchiku" type="text" name="zouchiku" placeholder="半角数字で入力" />
-        <p>最終建築時期</p>
+        <p>既存部分の最終建築時期</p>
         <p>
-          <input type="radio" name="bild" id="bild3" value="1.1" />
-          <label for="bild3" class="radio01">平成28 年3月31日以前の建物</label>
+          <input type="radio" name="bild1" id="bild3" value="0" />
+          <label for="bild3" class="radio01">平成28年3月31日以前の建物</label>
         </p>
         <p>
-          <input type="radio" name="bild" id="bild4" value="1.0" />
-          <label for="bild4" class="radio01">平成28 年4月1日以降の建物</label>
+          <input type="radio" name="bild1" id="bild4" value="1" />
+          <label for="bild4" class="radio01">平成28年4月1日～平成29年3月31日</label>
+        </p>
+        <p>
+          <input type="radio" name="bild1" id="bild5" value="2" />
+          <label for="bild5" class="radio01">平成29年4月1日～令和6年3月31日</label>
+        </p>
+        <p>
+          <input type="radio" name="bild1" id="bild6" value="3" />
+          <label for="bild6" class="radio01">令和6年4月1日～令和7年3月31日</label>
+        </p>
+        <p>今回の増築で確認申請を出す時期</p>
+        <p>
+          <input type="radio" name="bild2" id="bild7" value="0" />
+          <label for="bild7" class="radio02">令和7年3月31日までに申請</label>
+        </p>
+        <p>
+          <input type="radio" name="bild2" id="bild8" value="1" />
+          <label for="bild8" class="radio02">令和7年4月1日以降に申請</label>
         </p>
         <input id="submit" type="submit" value="計算する" />
       </form>

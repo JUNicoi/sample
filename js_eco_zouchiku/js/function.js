@@ -1,9 +1,9 @@
-const keisu = 1.2; //係数設定
 // フォーム変数
 const form = document.getElementById("form");
 const kizon = form.kizon;
 const zouchiku = form.zouchiku;
-const bild = form.bild;
+const bild1 = form.bild1;
+const bild2 = form.bild2;
 // 結果表示変数
 const result = document.getElementById("result");
 const keisuResult = document.getElementById("keisu");
@@ -18,7 +18,11 @@ form.addEventListener("submit", function (event) {
   event.preventDefault(); //ブラウザのリロードかからなくなる（デフォルトのイベントが動かない）
   const kizonMenseki = Number(kizon.value);
   const zouchikuMenseki = Number(zouchiku.value);
-  const ecoLevelResult = Number(bild.value);
+  const ecoLevelResult1 = Number(bild1.value);
+  const ecoLevelResult2 = Number(bild2.value);
+  if (ecoLevelResult1 === 0 && ecoLevelResult2 === 0) {
+    const ecoLevelResult3 = 
+  }
   // BEI計算式
   const nobeMenseki = kizonMenseki + zouchikuMenseki;
   const bei1 = nobeMenseki * ecoLevelResult;
