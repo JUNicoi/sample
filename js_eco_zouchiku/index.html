@@ -78,64 +78,67 @@
   <body>
     <div class="f_wrap">
       <form id="form">
-        <p>既存面積</p>
-        <input id="kizon" type="text" name="kizon" placeholder="半角数字で入力" />
-        <p>増築面積</p>
-        <input id="zouchiku" type="text" name="zouchiku" placeholder="半角数字で入力" />
-        <p>既存部分の最終建築時期</p>
+        <h3>既存部分の情報</h3>
+        <!-- <p>面積</p>
+        <input id="kizon" type="text" name="kizon" placeholder="半角数字で入力" /> -->
+        <p>最終建築時期</p>
         <p>
-          <input type="radio" name="bild1" id="bild3" value="0" />
+          <input type="radio" name="bild_kizon" id="bild3" value="0" />
           <label for="bild3" class="radio01">平成28年3月31日以前の建物</label>
         </p>
         <p>
-          <input type="radio" name="bild1" id="bild4" value="1" />
+          <input type="radio" name="bild_kizon" id="bild4" value="1" />
           <label for="bild4" class="radio01">平成28年4月1日～平成29年3月31日</label>
         </p>
         <p>
-          <input type="radio" name="bild1" id="bild5" value="2" />
+          <input type="radio" name="bild_kizon" id="bild5" value="2" />
           <label for="bild5" class="radio01">平成29年4月1日～令和6年3月31日</label>
         </p>
         <p>
-          <input type="radio" name="bild1" id="bild6" value="3" />
+          <input type="radio" name="bild_kizon" id="bild6" value="3" />
           <label for="bild6" class="radio01">令和6年4月1日～令和7年3月31日</label>
         </p>
-        <p>今回の増築で確認申請を出す時期</p>
+
+        <h3>増築部分の情報</h3>
+        <!-- <p>面積</p>
+        <input id="zouchiku" type="text" name="zouchiku" placeholder="半角数字で入力" /> -->
+        <p>増築の確認申請を出す時期</p>
         <p>
-          <input type="radio" name="bild2" id="bild7" value="0" />
-          <label for="bild7" class="radio02">令和7年3月31日までに申請</label>
+          <input type="radio" name="bild_zouchiku" id="bild7" value="0" />
+          <label for="bild7" class="radio01">令和7年3月31日までに申請</label>
         </p>
         <p>
-          <input type="radio" name="bild2" id="bild8" value="1" />
-          <label for="bild8" class="radio02">令和7年4月1日以降に申請</label>
+          <input type="radio" name="bild_zouchiku" id="bild8" value="1" />
+          <label for="bild8" class="radio01">令和7年4月1日以降に申請</label>
         </p>
-        <input id="submit" type="submit" value="計算する" />
+        <input id="submit" type="submit" value="判定する" />
       </form>
       <div id="result">
-        <h3>計算結果</h3>
+        <h3>判定結果</h3>
         <div class="tr">
-          <p>係数：</p>
+          <p>規定値：</p>
           <p id="keisu"></p>
         </div>
-        <div class="tr">
+        <!-- <div class="tr">
           <p>既存面積：</p>
           <p id="kizonMenseki"></p>
-        </div>
-        <div class="tr">
+        </div> -->
+        <!-- <div class="tr">
           <p>増築面積：</p>
           <p id="zouchikuMenseki"></p>
-        </div>
-        <div class="tr">
+        </div> -->
+        <!-- <div class="tr">
           <p>増築後の延床面積：</p>
           <p id="nobeMenseki"></p>
-        </div>
+        </div> -->
         <div class="tr">
           <p>省エネ基準：</p>
           <p id="ecoLevel"></p>
         </div>
-        <div class="tr">
+        <!-- <div class="tr">
           <p>省エネ基準をクリアするために必要な増築部分のBEI</p>
           <p id="bei"></p>
-        </div>
+        </div> -->
       </div>
     </div>
     <script src="./js/function.js"></script>
