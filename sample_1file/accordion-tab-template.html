@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>アコーディオンとタブ切替テンプレート</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 2rem;
+        background: #f8f9fa;
+      }
+
+      /* アコーディオン */
+      .accordion {
+        max-width: 600px;
+        margin: 2rem auto;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .accordion-header {
+        padding: 1rem;
+        background: #f0f0f0;
+        border-bottom: 1px solid #ccc;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .accordion-header:hover {
+        background: #e0e0e0;
+      }
+
+      .accordion-content {
+        display: none;
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .accordion-content.show {
+        display: block;
+      }
+
+      /* タブ切替 */
+      .tabs {
+        max-width: 600px;
+        margin: 3rem auto;
+        background: #fff;
+        border: 1px solid #ccc;
+      }
+
+      .tab-buttons {
+        display: flex;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .tab {
+        flex: 1;
+        padding: 1rem;
+        cursor: pointer;
+        background: #f9f9f9;
+        border: none;
+        border-bottom: 2px solid transparent;
+        font-weight: bold;
+      }
+
+      .tab:hover {
+        background: #eee;
+      }
+
+      .tab.active {
+        background: #fff;
+        border-bottom: 2px solid #007acc;
+      }
+
+      .tab-contents {
+        padding: 1rem;
+      }
+
+      .tab-content {
+        display: none;
+      }
+
+      .tab-content.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>アコーディオンとタブ切替UI</h1>
+
+    <!-- アコーディオン -->
+    <section class="accordion">
+      <button class="accordion-header" aria-expanded="false">Q1：このUIの使い道は？</button>
+      <div class="accordion-content">
+        <p>FAQなど、情報をスッキリ整理したい場面に向いています。</p>
+      </div>
+
+      <button class="accordion-header" aria-expanded="false">Q2：複数開けますか？</button>
+      <div class="accordion-content">
+        <p>はい、何個でも同時に開けます。</p>
+      </div>
+    </section>
+
+    <!-- タブ切替 -->
+    <section class="tabs">
+      <div class="tab-buttons" role="tablist">
+        <button class="tab active" data-tab="1" role="tab" aria-selected="true">タブ1</button>
+        <button class="tab" data-tab="2" role="tab" aria-selected="false">タブ2</button>
+      </div>
+      <div class="tab-contents">
+        <div class="tab-content active" data-tab="1" role="tabpanel">
+          <p>これはタブ1の内容です。</p>
+        </div>
+        <div class="tab-content" data-tab="2" role="tabpanel">
+          <p>こちらはタブ2のコンテンツです。</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // アコーディオン動作
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const content = header.nextElementSibling;
+          content.classList.toggle("show");
+
+          const isExpanded = header.getAttribute("aria-expanded") === "true";
+          header.setAttribute("aria-expanded", !isExpanded);
+        });
+      });
+
+      // タブ切替動作
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tab;
+
+          tabs.forEach((t) => {
+            t.classList.remove("active");
+            t.setAttribute("aria-selected", "false");
+          });
+
+          contents.forEach((c) => c.classList.remove("active"));
+
+          tab.classList.add("active");
+          tab.setAttribute("aria-selected", "true");
+          document.querySelector(`.tab-content[data-tab="${target}"]`).classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>
